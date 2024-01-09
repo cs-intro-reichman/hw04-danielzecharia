@@ -75,16 +75,16 @@ public class ArrayOps {
    {
     found1=false;
     found2=false;
-    for (int j=0; j<n2.length;j++)
+    for (int j=0; j<array2.length;j++)
     {
-        if(n1[i]==n2[j])
+        if(array1[i]==array2[j])
             found1=true;
 
     }
 
-    for(int x=0; x<n1.length; x++)
+    for(int x=0; x<array1.length; x++)
     {
-        if(n1[i]==n2[x])
+        if(array1[i]==array2[x])
             found2=true;
     }
       i++;
@@ -100,20 +100,20 @@ public class ArrayOps {
         boolean isSortedup=true;
    boolean isSorteddown=true;
    int i=0;
-   if(n[0]<=n[1])
+   if(array[0]<=array[1])
    {
     while (isSortedup==true && i<n.length-1)
    {
-    if(n[i]>n[i+1]) isSortedup=false;
+    if(array[i]>array[i+1]) isSortedup=false;
     i++;
 
    }
    }
    i=0;
-   if(n[0]>=n[1]){
+   if(array[0]>=array[1]){
     while (isSorteddown==true&& i<n.length-1)
    {
-    if(n[i]<n[i+1]) isSorteddown=false;
+    if(array[i]<array[i+1]) isSorteddown=false;
     i++;
    }
 }
