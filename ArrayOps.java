@@ -71,7 +71,7 @@ public class ArrayOps {
    boolean found2=false;
    boolean stop=false;
    int i=0;
-   while (stop==false && i<n1.length)
+   while (stop==false && i<array1.length)
    {
     found1=false;
     found2=false;
