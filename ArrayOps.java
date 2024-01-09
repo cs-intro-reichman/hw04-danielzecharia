@@ -102,7 +102,7 @@ public class ArrayOps {
    int i=0;
    if(array[0]<=array[1])
    {
-    while (isSortedup==true && i<n.length-1)
+    while (isSortedup==true && i<array.length-1)
    {
     if(array[i]>array[i+1]) isSortedup=false;
     i++;
@@ -111,7 +111,7 @@ public class ArrayOps {
    }
    i=0;
    if(array[0]>=array[1]){
-    while (isSorteddown==true&& i<n.length-1)
+    while (isSorteddown==true&& i<array.length-1)
    {
     if(array[i]<array[i+1]) isSorteddown=false;
     i++;
