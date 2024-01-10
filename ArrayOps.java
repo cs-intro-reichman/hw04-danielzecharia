@@ -52,6 +52,7 @@ public static void main(String[] args) {
     else{
 
         max2= max-1;
+    }
     while (max2> secondMax)
     {
         for (int i=0; i<array.length; i++){
@@ -63,8 +64,9 @@ public static void main(String[] args) {
     }
 
         return secondMax;
-    }
 }
+}
+
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
         // Write your code here:
