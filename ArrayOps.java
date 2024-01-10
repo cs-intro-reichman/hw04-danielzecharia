@@ -64,6 +64,7 @@ public static void main(String[] args) {
 
         return secondMax;
     }
+}
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
         // Write your code here:
@@ -123,6 +124,6 @@ public static void main(String[] args) {
 else return false;
     }
 
-        
+    
 
 }
