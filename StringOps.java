@@ -22,11 +22,37 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
+        String string = args [0];
+        System.out.println(capVowelsLowRest(string));
         
     }
 
     public static String capVowelsLowRest (String string) {
         // Write your code here:
+        char e='e';
+        char a='a';
+        char i='i';
+        char o= 'o';
+        char u= 'u';
+        char temp='';
+
+        for (int x=0; x<string.length();x++)
+        {
+            temp = string.charAt(x);
+            if((temp>='A')&&(temp<='Z'))
+            {
+                temp = temp +32;
+                string.charAt(x)= (char) temp;
+
+            }
+            if(temp==e||temp==a||temp==i||temp==o||temp==u)
+            {
+                temp= temp-32;
+                string.charAt(x)= (char) temp;
+            }
+
+
+        }
         return "";
     }
 
