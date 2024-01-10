@@ -34,30 +34,41 @@ public class StringOps {
         char i='i';
         char o= 'o';
         char u= 'u';
-        char temp='';
+        char temp = string.charAt(0);
+        String newS="";
+        int asci=0;
+        
 
         for (int x=0; x<string.length();x++)
         {
             temp = string.charAt(x);
             if((temp>='A')&&(temp<='Z'))
             {
-                temp = temp +32;
-                string.charAt(x)= (char) temp;
-
+                asci= (int)temp;
+                asci = asci +32;
+                temp= (char) asci;
+                newS= newS +temp;
             }
-            if(temp==e||temp==a||temp==i||temp==o||temp==u)
+            else{
+                if(temp==e||temp==a||temp==i||temp==o||temp==u)
             {
-                temp= temp-32;
-                string.charAt(x)= (char) temp;
+                asci= (int)temp;
+                asci = asci -32;
+                temp= (char) asci;
+                newS= newS +temp;
             }
+            else 
+                newS= newS +temp;
+        }
 
 
         }
-        return "";
+        return newS;
     }
 
     public static String camelCase (String string) {
         // Write your code here:
+        
         return "";
     }
 
