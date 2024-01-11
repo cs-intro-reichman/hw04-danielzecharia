@@ -1,7 +1,10 @@
-public class TesterArrayOps{
+import java.util.Arrays;
+
+public class TesterStringOps {
+
     public static void main(String[] args) {
         if (args.length != 2) {
-            System.out.println("Usage: java TesterArrayOps <function_name> <input_number>");
+            System.out.println("Usage: java TesterStringOps <function_name> <input_number>");
             return;
         }
 
@@ -9,81 +12,69 @@ public class TesterArrayOps{
         int inputNumber = Integer.parseInt(args[1]);
 
         switch (functionName) {
-            case "findMissingInt":
-                testFindMissingInt(inputNumber);
+            case "capVowelsLowRest":
+                testCapVowelsLowRest(inputNumber);
                 break;
-            case "secondMaxValue":
-                testSecondMaxValue(inputNumber);
+            case "camelCase":
+                testCamelCase(inputNumber);
                 break;
-            case "containsTheSameElements":
-                testContainsTheSameElements(inputNumber);
-                break;
-            case "isSorted":
-                testIsSorted(inputNumber);
+            case "allIndexOf":
+                testAllIndexOf(inputNumber);
                 break;
             default:
                 System.out.println("Invalid function name.");
         }
     }
 
-    private static void testFindMissingInt(int inputNumber) {
-        int[][] testCases = {
-                {0, 1, 2, 3, 4, 6},
-                {2, 3, 1},
-                {0},
+    private static void testCapVowelsLowRest(int inputNumber) {
+        String[] testCases = {
+                "Hello World",
+                "One two tHRee world",
+                "vowels are fun",
+                "Intro",
+                "yellow",
                 // Add more test cases as needed
         };
 
-        int result = ArrayOps.findMissingInt(testCases[inputNumber - 1]);
+        String result = StringOps.capVowelsLowRest(testCases[inputNumber - 1]);
         System.out.println(result);
     }
 
-    private static void testSecondMaxValue(int inputNumber) {
-        int[][] testCases = {
-                {1, 2, 3, 4, 5},
-                {2, 8, 3, 7, 8},
-                {1, -2, 3, -4, 5},
-                {-202, 48, 13, 7, 8},
+    private static void testCamelCase(int inputNumber) {
+        String[] testCases = {
+                "Hello World",
+                "HELLO world",
+                " tWo     wordS",
+                "world",
+                "   Intro to  coMPUter   	sCIEncE   ",
                 // Add more test cases as needed
         };
 
-        int result = ArrayOps.secondMaxValue(testCases[inputNumber - 1]);
+        String result = StringOps.camelCase(testCases[inputNumber - 1]);
         System.out.println(result);
     }
 
-    private static void testContainsTheSameElements(int inputNumber) {
-        int[][] testCasesArray1 = {
-                {1, 2, 3, 4, 5},
-                {2, 2, 3, 7, 8, 3, 2},
-                {1, 2, 3, -4, 5},
-                {87, -48, 31, 23897, 5},
-                {7},
+    private static void testAllIndexOf(int inputNumber) {
+        String[] strings = {
+                "Hello world",
+                "Hello worLd",
+                "Hello world",
+                "Hello world",
+                "MMMM",
                 // Add more test cases as needed
         };
-        int[][] testCasesArray2 = {
-                {1, 2, 3, 4, 5},
-                {8, 2, 7, 7, 3},
-                {1, 3, -4, 5},
-                {-22, 8, 13, 7},
-                {8, -900, 7},
-                // Add corresponding test cases as needed
+        char[] characters = {'l', 'l', 'o', ' ', 'M', 'M'};
+
+        int[][] expectedResults = {
+                {2, 3, 9},
+                {2, 3},
+                {4, 7},
+                {5},
+                {0, 1, 2, 3}
         };
 
-        boolean result = ArrayOps.containsTheSameElements(testCasesArray1[inputNumber - 1], testCasesArray2[inputNumber - 1]);
-        System.out.println(result);
-    }
+        int[] result = StringOps.allIndexOf(strings[inputNumber - 1], characters[inputNumber - 1]);
 
-    private static void testIsSorted(int inputNumber) {
-        int[][] testCases = {
-                {1, 2, 3},
-                {3, 2, 1},
-                {1, -2, 3},
-                {1, 1, 3},
-                // Add more test cases as needed
-        };
-
-        boolean result = ArrayOps.isSorted(testCases[inputNumber - 1]);
-        System.out.println(result);
+        System.out.println(Arrays.toString(result));
     }
 }
-
