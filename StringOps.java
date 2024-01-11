@@ -62,7 +62,7 @@ public class StringOps {
         return newS;
     }
 
-    //    public static String camelCase (String string) {
+    public static String camelCase (String string) {
 //        // Write your code here:
 //        int asci = 0;
 //        boolean space = false;
