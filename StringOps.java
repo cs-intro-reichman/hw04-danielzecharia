@@ -42,32 +42,52 @@ public class StringOps {
         for (int x=0; x<string.length();x++)
         {
             temp = string.charAt(x);
-            if((temp>='A')&&(temp<='Z'))
-            {
-                asci= (int)temp;
-                asci = asci +32;
-                temp= (char) asci;
-                newS= newS +temp;
-            }
-            else{
-                if(temp==e||temp==a||temp==i||temp==o||temp==u)
+             if(temp==e||temp==a||temp==i||temp==o||temp==u)
             {
                 asci= (int)temp;
                 asci = asci -32;
                 temp= (char) asci;
-                newS= newS +temp;
             }
-            else 
+            else
+                if((temp>='A')&&(temp<='Z')&&(temp!='O'&&temp!='A'&&temp!='I'&&temp!='E'&&temp!='U'))
+            {
+                asci= (int)temp;
+                asci = asci +32;
+                temp= (char) asci;
+            }
+
                 newS= newS +temp;
         }
 
-
-        }
-        return newS;
+                 return newS;
     }
 
     public static String camelCase (String string) {
         // Write your code here:
+        int asci=0;
+        boolean space=false;
+        char newChar;
+        char temp= string.charAt(0);
+        if ( temp>='A'&&temp<='Z'){
+            asci = (char) temp;
+            asci = asci +32;
+            newChar = (char) asci;
+            //add char to string
+        }
+    
+        for (int i=1; i<string.length();i++)
+        {
+            temp = string.charAt(x);
+            if(space)
+            {
+                while (stop)
+                {
+
+                }
+            }
+            if (temp==' ')
+                space=true;
+
         
         return "";
     }
@@ -77,3 +97,4 @@ public class StringOps {
         return new int[1];
     }
 }
+

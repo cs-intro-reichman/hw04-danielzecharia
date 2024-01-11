@@ -65,16 +65,13 @@ public static void main(String[] args) {
 
         return secondMax;
 }
-}
-
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
-        // Write your code here:
-        boolean found1=false;
-   boolean found2=false;
-   boolean stop=false;
+    boolean found1 = false;
+   boolean found2 = false;
+   boolean stop = false;
    int i=0;
-   while (stop==false && i<array1.length)
+   while (!stop && i<array1.length)
    {
     found1=false;
     found2=false;
@@ -93,38 +90,41 @@ public static void main(String[] args) {
       i++;
     if (found1==false||found2==false) stop=true;
    }
-   if(stop== true) System.out.println ("false");
-   else System.out.println ("true");
-        return false;
+   if(stop== true) return false;
+   else return true;
     }
 
     public static boolean isSorted(int [] array) {
-        // Write your code here:
-        boolean isSortedup=true;
-   boolean isSorteddown=true;
-   int i=0;
-   if(array[0]<=array[1])
-   {
-    while (isSortedup==true && i<array.length-1)
-   {
-    if(array[i]>array[i+1]) isSortedup=false;
-    i++;
+       // Write your code here:
+       boolean isSortedup=true;
+       boolean isSorteddown=true;
+       int i=0;
+       if(array[0]<=array[1])
+       {
+       while (isSortedup==true && i<array.length-1)
+       {
+       if(array[i]>array[i+1]) isSortedup=false;
+       i++;
 
-   }
-   }
-   i=0;
-   if(array[0]>=array[1]){
-    while (isSorteddown==true&& i<array.length-1)
-   {
-    if(array[i]<array[i+1]) isSorteddown=false;
-    i++;
+  }
+  }
+  i=0;
+  if(array[0]>=array[1]){
+   while (isSorteddown==true&& i<array.length-1)
+  {
+   if(array[i]<array[i+1]) isSorteddown=false;
+   i++;
+  }
+}
+
+    if(isSorteddown==false||isSortedup==false)
+     return false;
+else return false;
    }
 }
+
+
    
-     if(isSorteddown==false||isSortedup==false)
-      return false;
-else return false;
-    }
 
     
 
