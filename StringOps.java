@@ -93,5 +93,8 @@ public class StringOps {
         // Write your code here:
         return new int[1];
     }
+
+    public static String camelCase(String testCase) {
+    }
 }
 
