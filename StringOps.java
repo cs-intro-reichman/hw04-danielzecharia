@@ -62,36 +62,33 @@ public class StringOps {
                  return newS;
     }
 
-    public static String camelCase (String string) {
-        // Write your code here:
-        int asci=0;
-        boolean space=false;
-        char newChar;
-        char temp= string.charAt(0);
-        if ( temp>='A'&&temp<='Z'){
-            asci = (char) temp;
-            asci = asci +32;
-            newChar = (char) asci;
-            //add char to string
-        }
-    
-        for (int i=1; i<string.length();i++)
-        {
-            temp = string.charAt(x);
-            if(space)
-            {
-                while (stop)
-                {
-
-                }
-            }
-            if (temp==' ')
-                space=true;
-
-        
-        return "";
-    }
-
+//    public static String camelCase (String string) {
+//        // Write your code here:
+//        int asci = 0;
+//        boolean space = false;
+//        char newChar;
+//        char temp = string.charAt(0);
+//        if (temp >= 'A' && temp <= 'Z') {
+//            asci = (char) temp;
+//            asci = asci + 32;
+//            newChar = (char) asci;
+//            //add char to string
+//        }
+//
+//        for (int i = 1; i < string.length(); i++) {
+//            temp = string.charAt(i);
+//            if (space) {
+//                while (stop) {
+//
+//                }
+//            }
+//            if (temp == ' ')
+//                space = true;
+//
+//
+//            return "";
+//        }
+//    }
     public static int[] allIndexOf (String string, char chr) {
         // Write your code here:
         return new int[1];
