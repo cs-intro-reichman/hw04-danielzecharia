@@ -1,4 +1,4 @@
-public class TesterArrayOps {
+public class TesterArrayOps{
 
     public static void main(String[] args) {
         if (args.length != 2) {
