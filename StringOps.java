@@ -1,100 +1,80 @@
-public class StringOps {
-    ////////////////////////////////////////////////////////////
-    //////                                               ///////
-    //////              Reminder:                        ///////
-    //////        allowed methods                        ///////
-    //////                                               ///////
-    //////        1.charAt(int index)                    ///////
-    //////        2.length()                             ///////
-    //////        3.substring(int start)                 ///////
-    //////        4.substring(int start,int ends)        ///////
-    //////        5.indexOf(String str)                  ///////
-    //////                                               ///////
-    //////        The rest are not allowed !             ///////
-    //////        if you want to use a different         ///////
-    //////        method, and you can implement          ///////
-    //////        it using material from the course      ///////
-    //////        you need to implement a version of     ///////
-    //////        the function by yourself.              ///////
-    //////                                               ///////
-    //////        see example for substring              ///////
-    //////        in Recitation 3 question 5             ///////
-    //////                                               ///////
-    ////////////////////////////////////////////////////////////
+import java.util.Arrays;
+
+public class TesterStringOps {
+
     public static void main(String[] args) {
-        String string = args [0];
-        System.out.println(capVowelsLowRest(string));
-        
-    }
-
-    public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        char e='e';
-        char a='a';
-        char i='i';
-        char o= 'o';
-        char u= 'u';
-        char temp = string.charAt(0);
-        String newS="";
-        int asci=0;
-        
-
-        for (int x=0; x<string.length();x++)
-        {
-            temp = string.charAt(x);
-             if(temp==e||temp==a||temp==i||temp==o||temp==u)
-            {
-                asci= (int)temp;
-                asci = asci -32;
-                temp= (char) asci;
-            }
-            else
-                if((temp>='A')&&(temp<='Z')&&(temp!='O'&&temp!='A'&&temp!='I'&&temp!='E'&&temp!='U'))
-            {
-                asci= (int)temp;
-                asci = asci +32;
-                temp= (char) asci;
-            }
-
-                newS= newS +temp;
+        if (args.length != 2) {
+            System.out.println("Usage: java TesterStringOps <function_name> <input_number>");
+            return;
         }
 
-                 return newS;
+        String functionName = args[0];
+        int inputNumber = Integer.parseInt(args[1]);
+
+        switch (functionName) {
+            case "capVowelsLowRest":
+                testCapVowelsLowRest(inputNumber);
+                break;
+            case "camelCase":
+                testCamelCase(inputNumber);
+                break;
+            case "allIndexOf":
+                testAllIndexOf(inputNumber);
+                break;
+            default:
+                System.out.println("Invalid function name.");
+        }
     }
 
-//    public static String camelCase (String string) {
-//        // Write your code here:
-//        int asci = 0;
-//        boolean space = false;
-//        char newChar;
-//        char temp = string.charAt(0);
-//        if (temp >= 'A' && temp <= 'Z') {
-//            asci = (char) temp;
-//            asci = asci + 32;
-//            newChar = (char) asci;
-//            //add char to string
-//        }
-//
-//        for (int i = 1; i < string.length(); i++) {
-//            temp = string.charAt(i);
-//            if (space) {
-//                while (stop) {
-//
-//                }
-//            }
-//            if (temp == ' ')
-//                space = true;
-//
-//
-//            return "";
-//        }
-//    }
-    public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+    private static void testCapVowelsLowRest(int inputNumber) {
+        String[] testCases = {
+                "Hello World",
+                "One two tHRee world",
+                "vowels are fun",
+                "Intro",
+                "yellow",
+                // Add more test cases as needed
+        };
+
+        String result = StringOps.capVowelsLowRest(testCases[inputNumber - 1]);
+        System.out.println(result);
     }
 
-    public static String camelCase(String testCase) {
+    private static void testCamelCase(int inputNumber) {
+        String[] testCases = {
+                "Hello World",
+                "HELLO world",
+                " tWo     wordS",
+                "world",
+                "   Intro to  coMPUter   	sCIEncE   ",
+                // Add more test cases as needed
+        };
+
+        String result = StringOps.camelCase(testCases[inputNumber - 1]);
+        System.out.println(result);
+    }
+
+    private static void testAllIndexOf(int inputNumber) {
+        String[] strings = {
+                "Hello world",
+                "Hello worLd",
+                "Hello world",
+                "Hello world",
+                "MMMM",
+                // Add more test cases as needed
+        };
+        char[] characters = {'l', 'l', 'o', ' ', 'M', 'M'};
+
+        int[][] expectedResults = {
+                {2, 3, 9},
+                {2, 3},
+                {4, 7},
+                {5},
+                {0, 1, 2, 3}
+        };
+
+        int[] result = StringOps.allIndexOf(strings[inputNumber - 1], characters[inputNumber - 1]);
+
+        System.out.println(Arrays.toString(result));
     }
 }
-
