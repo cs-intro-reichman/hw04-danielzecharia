@@ -64,7 +64,7 @@ public class TesterStringOps {
                 // Add more test cases as needed
         };
         char[] characters = {'l', 'l', 'o', ' ', 'M', 'M'};
-    
+
         int[][] expectedResults = {
                 {2, 3, 9},
                 {2, 3},
@@ -72,9 +72,9 @@ public class TesterStringOps {
                 {5},
                 {0, 1, 2, 3}
         };
-    
+
         int[] result = StringOps.allIndexOf(strings[inputNumber - 1], characters[inputNumber - 1]);
-    
+
         System.out.println(Arrays.toString(result));
     }
 }
