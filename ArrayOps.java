@@ -1,5 +1,8 @@
 public class ArrayOps {
 public static void main(String[] args) {
+    //int [] array1 = {2,2,3,7,8,3,2};
+    //int [] array2 = {8,2,7,7,3};
+    //System.out.println(containsTheSameElements(array1, array2));
         
     }
     
@@ -8,14 +11,16 @@ public static void main(String[] args) {
     boolean foundMissing =false;
     int miss=0;
     int counter=0;
-    while(foundMissing == false)
+    while(!foundMissing)
     {
         for( int i=0; i<array.length; i++)
     {
-        if( array[i]==counter)
-            foundMissing= true;
+        if (array[i] == counter) {
+            foundMissing = true;
+            break;
+        }
     }
-    if(foundMissing == true)
+    if(foundMissing)
     {
         foundMissing= false;
         counter++;
@@ -56,8 +61,10 @@ public static void main(String[] args) {
     while (max2> secondMax)
     {
         for (int i=0; i<array.length; i++){
-            if(array[i]==max2)
-                secondMax=max2;
+            if (array[i] == max2) {
+                secondMax = max2;
+                break;
+            }
 
         }
         max2--;
@@ -71,27 +78,28 @@ public static void main(String[] args) {
    boolean found2 = false;
    boolean stop = false;
    int i=0;
-   while (!stop && i<array1.length)
+   while (!stop && i<array1.length && i<array2.length)
    {
     found1=false;
     found2=false;
     for (int j=0; j<array2.length;j++)
     {
-        if(array1[i]==array2[j])
-            found1=true;
+        if (array1[i] == array2[j]) {
+            found1 = true;
+            break;
+        }
 
     }
 
     for(int x=0; x<array1.length; x++)
-    {
-        if(array1[i]==array2[x])
-            found2=true;
-    }
+        if (array1[i] == array2[x]) {
+            found2 = true;
+            break;
+        }
       i++;
-    if (found1==false||found2==false) stop=true;
+    if (!found1 || !found2) stop=true;
    }
-   if(stop== true) return false;
-   else return true;
+        return !stop;
     }
 
     public static boolean isSorted(int [] array) {
@@ -101,7 +109,7 @@ public static void main(String[] args) {
        int i=0;
        if(array[0]<=array[1])
        {
-       while (isSortedup==true && i<array.length-1)
+       while (isSortedup && i<array.length-1)
        {
        if(array[i]>array[i+1]) isSortedup=false;
        i++;
@@ -110,14 +118,14 @@ public static void main(String[] args) {
   }
   i=0;
   if(array[0]>=array[1]){
-   while (isSorteddown==true&& i<array.length-1)
+   while (isSorteddown && i<array.length-1)
   {
    if(array[i]<array[i+1]) isSorteddown=false;
    i++;
   }
 }
 
-    if(isSorteddown==false||isSortedup==false)
+    if(!isSorteddown || !isSortedup)
      return false;
 else return false;
    }
