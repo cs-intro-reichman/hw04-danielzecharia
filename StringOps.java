@@ -94,7 +94,7 @@ public class StringOps {
         return new int[1];
     }
 
-    //  public static String camelCase(String testCase) {
-    // }
+      public static String camelCase(String testCase) {
+     }
 }
 
