@@ -1,9 +1,9 @@
 public class ArrayOps {
 public static void main(String[] args) {
-    int [] array = {1,2,3,4,5, 5};
+    int [] array = {1,2,3};
     int [] array1 = {1,2,3,4,5};
     int [] array2 = {1,2,3,4,5};
-    System.out.println(secondMaxValue(array));
+    System.out.println(isSorted(array));
         
     }
     
@@ -124,7 +124,7 @@ public static void main(String[] args) {
 
     if(!isSorteddown || !isSortedup)
      return false;
-else return false;
+else return true;
    }
 }
 
