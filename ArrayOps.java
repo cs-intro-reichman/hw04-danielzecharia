@@ -1,8 +1,8 @@
 public class ArrayOps {
 public static void main(String[] args) {
-    //int [] array1 = {2,2,3,7,8,3,2};
-    //int [] array2 = {8,2,7,7,3};
-    //System.out.println(containsTheSameElements(array1, array2));
+    int [] array1 = {1,2,3,-4,5};
+    int [] array2 = {1,3,-4,5};
+    System.out.println(containsTheSameElements(array1, array2));
         
     }
     
@@ -91,11 +91,13 @@ public static void main(String[] args) {
 
     }
 
-    for(int x=0; x<array1.length; x++)
-        if (array1[i] == array2[x]) {
+    for(int x=0; x<array1.length; x++) {
+        if (array1[i] != array2[x]) {
+
             found2 = true;
             break;
         }
+    }
       i++;
     if (!found1 || !found2) stop=true;
    }
