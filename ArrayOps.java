@@ -1,8 +1,9 @@
 public class ArrayOps {
 public static void main(String[] args) {
-    int [] array1 = {1,2,3,-4,5};
-    int [] array2 = {1,3,-4,5};
-    System.out.println(containsTheSameElements(array1, array2));
+    int [] array = {1,2,3,4,5, 5};
+    int [] array1 = {1,2,3,4,5};
+    int [] array2 = {1,2,3,4,5};
+    System.out.println(secondMaxValue(array));
         
     }
     
@@ -37,43 +38,37 @@ public static void main(String[] args) {
 
     public static int secondMaxValue(int [] array) {
         // Write your code here:
-        int max=0;
-   int max2=0;
-   int count=1;
-   int secondMax=0;
-   boolean found=false;
-   for (int i=0; i<array.length-1; i++)
-    {
-        max= Math.max (array[i], array[i+1]);
-    }
-  
-    for (int i=0; i<array.length; i++)
-    {
-        if (max == array[i])
-            count++;
-    }
-    if(count>1)
-        System.out.println(max);
-    else{
+        int max = 0;
+        int max2 = 0;
+        int count = 0;
+        int secondMax = 0;
+        boolean found = false;
+        for (int i = 0; i < array.length - 1; i++) {
+            max = Math.max(array[i], array[i + 1]);
+        }
 
-        max2= max-1;
-    }
-    while (max2> secondMax)
-    {
-        for (int i=0; i<array.length; i++){
-            if (array[i] == max2) {
-                secondMax = max2;
-                break;
+        for (int i = 0; i < array.length; i++) {
+            if (max == array[i])
+                count++;
+        }
+        if (count > 1) return (max);
+        else {
+            max2 = max - 1;
+            while (max2 > secondMax) {
+                for (int i = 0; i < array.length; i++) {
+                    if (array[i] == max2) {
+                        secondMax = max2;
+                        break;
+                    }
+
+                }
+                max2--;
             }
 
+            return secondMax;
         }
-        max2--;
     }
-
-        return secondMax;
-}
-
-    public static boolean containsTheSameElements(int [] array1,int [] array2) {
+    public static boolean containsTheSameElements(int [] array1 ,int [] array2) {
     boolean found1 = false;
    boolean found2 = false;
    boolean stop = false;
