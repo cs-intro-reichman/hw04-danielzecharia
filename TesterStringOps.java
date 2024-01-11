@@ -46,7 +46,7 @@ public class TesterStringOps {
                 "HELLO world",
                 " tWo     wordS",
                 "world",
-                "   Intro to  coMPUter   	sCIEncE   ",
+                "   Intro to  coMPUter      sCIEncE   ",
                 // Add more test cases as needed
         };
 
@@ -78,3 +78,5 @@ public class TesterStringOps {
         System.out.println(Arrays.toString(result));
     }
 }
+
+
