@@ -89,9 +89,10 @@ public class StringOps {
 //            return "";
 //        }
 //    }
+    }
     public static int[] allIndexOf (String string, char chr) {
         // Write your code here:
-        return 0;
+        return int[] ;
     }
 
 
