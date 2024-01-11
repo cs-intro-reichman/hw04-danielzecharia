@@ -91,10 +91,9 @@ public class StringOps {
 //    }
     public static int[] allIndexOf (String string, char chr) {
         // Write your code here:
-        return new int[1];
+        return 0;
     }
 
-      public static String camelCase(String testCase) {
-     }
+
 }
 
