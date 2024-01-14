@@ -22,8 +22,9 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String string = args[0];
-        System.out.println(capVowelsLowRest(string));
+        //String string = args[0;
+        String string ="  Intro to coMPuter sCIence ";
+        System.out.println(camelCase(string));
 
     }
 
@@ -60,6 +61,7 @@ public class StringOps {
     public static String camelCase(String string) {
         // Write your code here:
         int asci = 0;
+        String str= "";
         int input =-1;
         char newChar;
         char temp = string.charAt(0);
@@ -70,27 +72,39 @@ public class StringOps {
             str = str +newChar;
         }
         else if(temp != ' ') str = str + temp;
+        else input=0;
 
         for (int i = 1; i < string.length(); i++) {
             temp = string.charAt(i);
             if (temp == ' ') input = i;
-            if ((input == i - 1) && (temp >= 'a' && temp <= 'z') && (temp != ' ')) {
+            if ((str == "") && temp != ' ' && (temp >= 'A' && temp <= 'Z')) {
                 asci = (char) temp;
                 asci = asci + 32;
                 newChar = (char) asci;
                 str = str + newChar;
+            } else {
+                if ((input == i - 1) && (temp >= 'a' && temp <= 'z') && (temp != ' ') && str != "") {
+                    asci = (char) temp;
+                    asci = asci - 32;
+                    newChar = (char) asci;
+                    str = str + newChar;
+                } else {
+                    if (temp >= 'A' && temp <= 'Z' && temp != ' ' && input != i - 1) {
+                        asci = (char) temp;
+                        asci = asci + 32;
+                        newChar = (char) asci;
+                        str = str + newChar;
+                    } else if (temp != ' ') str = str + temp;
+                }
             }
-            if (temp >= 'A' && temp <= 'Z' && temp != ' ') {
-                asci = (char) temp;
-                asci = asci + 32;
-                newChar = (char) asci;
-                str = str + newChar;
-            } else if (temp != ' ') str = str + temp;
         }
 
         return str;
     }
 
     public static int[] allIndexOf(String string, char chr) {
+        int []array = new int [1];
+
+        return array ;
     }
 }
