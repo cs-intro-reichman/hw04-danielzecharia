@@ -85,7 +85,7 @@ public class StringOps {
         }
 
     public static int[] allIndexOf(String string, char chr) {
-        // Write your code here:
+        // Write your code here
         return new int[1];
     }
 }
