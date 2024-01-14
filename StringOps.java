@@ -23,7 +23,8 @@ public class StringOps {
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
         //String string = "Hello World";
-       // System.out.println(camelCase(string));
+        //char chr='l';
+        //System.out.println(allIndexOf(string, chr));
 
 
     }
@@ -61,18 +62,17 @@ public class StringOps {
     public static String camelCase(String string) {
         // Write your code here:
         int asci = 0;
-        String str= "";
-        int input =-1;
+        String str = "";
+        int input = -1;
         char newChar;
         char temp = string.charAt(0);
         if (temp >= 'A' && temp <= 'Z') {
             asci = (char) temp;
             asci = asci + 32;
             newChar = (char) asci;
-            str = str +newChar;
-        }
-        else if(temp != ' ') str = str + temp;
-        else input=0;
+            str = str + newChar;
+        } else if (temp != ' ') str = str + temp;
+        else input = 0;
 
         for (int i = 1; i < string.length(); i++) {
             temp = string.charAt(i);
@@ -103,8 +103,24 @@ public class StringOps {
     }
 
     public static int[] allIndexOf(String string, char chr) {
-        int []array = new int [1];
+        int counter = 0;
+        int index = 0;
+        int k = 0;
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == chr)
+                counter++;
+        }
+        int[] array = new int[counter];
+        while (k < counter) {
+            for (int x = 0; x < string.length(); x++) {
+                if (string.charAt(x) == chr) {
+                    array[k] = x;
+                    k++;
+                }
+            }
+        }
 
-        return array ;
+        return array;
     }
 }
+
