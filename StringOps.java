@@ -23,8 +23,7 @@ public class StringOps {
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
         //String string = args[0;
-        String string ="  Intro to coMPuter sCIence ";
-        System.out.println(camelCase(string));
+
 
     }
 
